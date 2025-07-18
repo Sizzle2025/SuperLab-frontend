@@ -34,7 +34,7 @@ const TaskDetail = () => {
 
   const fetchTask = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/tasks/${taskId}`);
+      const res = await axios.get(`https://superlab-backend-ucpo.onrender.com/api/tasks/${taskId}`);
       setTask(res.data);
       setLoading(false);
     } catch (err) {
@@ -55,7 +55,7 @@ const TaskDetail = () => {
 
     try {
       await axios.patch(
-        `http://localhost:5000/api/tasks/${taskId}/progress`,
+        `https://superlab-backend-ucpo.onrender.com/api/tasks/${taskId}/progress`,
         formData
       );
       setMessage(`Marked as '${status}' successfully.`);
@@ -203,7 +203,7 @@ const TaskDetail = () => {
                 <CardMedia
                   component="img"
                   height="200"
-                  image={`http://localhost:5000/uploads/${task.photoProof}`}
+                  image={`https://superlab-backend-ucpo.onrender.com/uploads/${task.photoProof}`}
                   alt="Proof"
                   sx={{ borderRadius: 2, boxShadow: 2 }}
                 />

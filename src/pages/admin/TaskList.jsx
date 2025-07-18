@@ -27,7 +27,7 @@ const TaskList = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks/list');
+      const res = await axios.get('https://superlab-backend-ucpo.onrender.com/api/tasks/list');
       setTasks(res.data);
     } catch (err) {
       console.error('Failed to load tasks:', err);
@@ -36,7 +36,7 @@ const TaskList = () => {
 
   const handleStatusChange = async (taskId, newStatus) => {
     try {
-      await axios.patch(`http://localhost:5000/api/tasks/${taskId}/status`, {
+      await axios.patch(`https://superlab-backend-ucpo.onrender.com/api/tasks/${taskId}/status`, {
         status: newStatus,
       });
       fetchTasks(); // Refresh task list
@@ -129,12 +129,12 @@ const TaskList = () => {
                   <TableCell>
                     {task.photoProof ? (
                       <Link
-                        href={`http://localhost:5000/uploads/${task.photoProof}`}
+                        href={`https://superlab-backend-ucpo.onrender.com/uploads/${task.photoProof}`}
                         target="_blank"
                         rel="noopener"
                       >
                         <img
-                          src={`http://localhost:5000/uploads/${task.photoProof}`}
+                          src={`https://superlab-backend-ucpo.onrender.com/uploads/${task.photoProof}`}
                           alt="Proof"
                           style={{
                             width: 50,

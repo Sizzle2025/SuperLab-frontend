@@ -11,7 +11,7 @@ const LocationTracking = () => {
     const fetchLocations = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get('http://localhost:5000/api/admin/staff-list', {
+        const res = await axios.get('https://superlab-backend-ucpo.onrender.com/api/admin/staff-list', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

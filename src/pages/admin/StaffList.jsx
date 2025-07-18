@@ -17,7 +17,7 @@ const StaffList = () => {
 
   const fetchStaff = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/staff/list');
+      const res = await axios.get('https://superlab-backend-ucpo.onrender.com/api/staff/list');
       setStaffList(res.data);
     } catch (err) {
       console.error('Failed to fetch staff:', err);
@@ -27,7 +27,7 @@ const StaffList = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this staff?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/staff/delete/${id}`);
+      await axios.delete(`https://superlab-backend-ucpo.onrender.com/api/staff/delete/${id}`);
       setMessage('Staff deleted successfully');
       fetchStaff();
       setTimeout(() => setMessage(''), 3000);

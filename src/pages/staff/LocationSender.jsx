@@ -13,7 +13,7 @@ const LocationSender = () => {
             const { latitude, longitude } = position.coords;
             try {
               const res = await axios.post(
-  'http://localhost:5000/api/staff/update-location',
+  'https://superlab-backend-ucpo.onrender.com/api/staff/update-location',
   { latitude, longitude },
   {
     headers: {

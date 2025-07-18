@@ -25,7 +25,7 @@ const AttendedPatients = () => {
 
   const fetchCompletedTasks = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/tasks/staff/${staffId}`);
+      const res = await axios.get(`https://superlab-backend-ucpo.onrender.com/api/tasks/staff/${staffId}`);
       const completed = res.data.filter(task => task.status === 'Completed');
       setCompletedTasks(completed);
     } catch (err) {

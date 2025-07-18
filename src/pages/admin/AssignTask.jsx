@@ -29,7 +29,7 @@ const AssignTask = () => {
   useEffect(() => {
     const fetchStaff = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/staff/list');
+        const res = await axios.get('https://superlab-backend-ucpo.onrender.com/api/staff/list');
         setStaffList(res.data);
       } catch (err) {
         console.error('Failed to load staff:', err);
@@ -53,7 +53,7 @@ const AssignTask = () => {
         assignedStaff: selectedStaff?._id,
       };
 
-      const res = await axios.post('http://localhost:5000/api/tasks/assign', payload);
+      const res = await axios.post('https://superlab-backend-ucpo.onrender.com/api/tasks/assign', payload);
       setMsg(res.data.msg);
       setForm({
         taskType: 'B2B',

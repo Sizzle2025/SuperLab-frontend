@@ -35,7 +35,7 @@ const ViewTask = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/tasks/staff/${staffId}`);
+      const res = await axios.get(`https://superlab-backend-ucpo.onrender.com/api/tasks/staff/${staffId}`);
       const pendingOnly = res.data.filter((task) => task.status !== "Completed");
       setTasks(pendingOnly);
     } catch (err) {
@@ -58,7 +58,7 @@ const ViewTask = () => {
     }
 
     try {
-      await axios.patch(`http://localhost:5000/api/tasks/${taskId}/progress`, formData);
+      await axios.patch(`https://superlab-backend-ucpo.onrender.com/api/tasks/${taskId}/progress`, formData);
       setMessage(`Task marked as '${status}' successfully.`);
       setMessageType("success");
       fetchTasks();
